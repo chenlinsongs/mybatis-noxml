@@ -28,8 +28,10 @@ repositories {
     mavenCentral()
 }
 
+
+
 bootJar {
-    baseName = 'mybatis-noxml'
+    baseName = 'mybatis-noxml-autoconfig'
     version = '1.0-SNAPSHOT'
     enabled = false
 }
@@ -47,7 +49,7 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-jdbc', version: '5.0.12.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.0.8.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.0.8.RELEASE', ext: 'pom'
-
+    compile group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.0.8.RELEASE'
 
     compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.1'
     compile group: 'xerces', name: 'xercesImpl', version: '2.12.0'

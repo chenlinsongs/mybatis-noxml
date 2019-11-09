@@ -30,7 +30,7 @@ public class MybatisTest {
     public void mybatisTestDaoTest(){
         Assert.assertNotNull(mybatisTestDao.get());
         Assert.assertTrue(mybatisTestDao.get().size() > 0);
-        logger.error(mybatisTestDao.get().get(0).toString());
+        logger.info("----"+mybatisTestDao.get().get(0).toString());
     }
 
     @Test
@@ -39,6 +39,6 @@ public class MybatisTest {
         List list = propertiesDao.selectByExample(example);
         Assert.assertNotNull(list);
         Assert.assertTrue(list.size() > 0);
-        logger.error(list.get(0).toString());
+        logger.info("----"+list.get(0).toString());
     }
 }

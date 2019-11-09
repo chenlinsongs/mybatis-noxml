@@ -1,2 +1,5 @@
 org.springframework.context.ApplicationContextInitializer=\
 self.mybatis.noxml.environment.EnvApplicationListener
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+self.mybatis.noxml.MybatisNoXmlAutoConfigure

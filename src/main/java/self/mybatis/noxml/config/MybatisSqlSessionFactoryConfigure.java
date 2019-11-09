@@ -2,21 +2,18 @@ package self.mybatis.noxml.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
-import self.mybatis.noxml.annotation.MyBatisDao;
 import self.mybatis.noxml.entity.Entity;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 @ConditionalOnProperty(prefix = "mybatis", value = "basePackage")
 @EnableConfigurationProperties(MybatisProperties.class)
 public class MybatisSqlSessionFactoryConfigure {

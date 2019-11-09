@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 /**
  * MyBatis基础配置
  */
-@Configuration
+//@Configuration
 @EnableTransactionManagement
 public class TransactionConfigure implements TransactionManagementConfigurer {
 
