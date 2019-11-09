@@ -1,0 +1,17 @@
+jdbc:
+  type: mysql
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/noxml?useSSL=false&useUnicode=true&characterEncoding=utf-8
+  username: root
+  password: bTdQsnMTpZz*Vzb8
+  testSql: SELECT 'x' FROM DUAL
+  c3p0: true
+
+mybatis:
+  basePackage: self.mybatis.noxml
+
+server:
+  port: 8080
+
+logging:
+  path: logs
