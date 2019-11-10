@@ -4,7 +4,7 @@ package self.mybatis.noxml.entity;
 import javax.persistence.Column;
 import java.util.Date;
 
-public class UserDateDelFlagEntity<P> extends CommonEntity<P> {
+public class UserDateDelFlagEntity extends CommonEntity {
 
     @Column(name = "create_by")
     protected String createBy;    // 创建者

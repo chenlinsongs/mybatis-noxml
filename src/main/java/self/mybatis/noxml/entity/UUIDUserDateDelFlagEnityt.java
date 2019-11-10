@@ -2,8 +2,7 @@ package self.mybatis.noxml.entity;
 
 import javax.persistence.Column;
 
-public class IdUserDateDelFlagEntity extends IdUserDateEntity {
-    private static final long serialVersionUID = 1L;
+public class UUIDUserDateDelFlagEnityt extends UUIDUserDateEnityt{
 
     @Column(name = "del_flag")
     protected String delFlag; 	// 删除标记（0：正常；1：删除；2：审核）
@@ -15,12 +14,7 @@ public class IdUserDateDelFlagEntity extends IdUserDateEntity {
     public static final String DEL_FLAG_DELETE = "1";
     public static final String DEL_FLAG_AUDIT = "2";
 
-    public IdUserDateDelFlagEntity(){
-        super();
-        this.delFlag = DEL_FLAG_NORMAL;
-    }
-    public IdUserDateDelFlagEntity(Long id){
-        super(id);
+    public UUIDUserDateDelFlagEnityt(){
         this.delFlag = DEL_FLAG_NORMAL;
     }
 
@@ -31,9 +25,4 @@ public class IdUserDateDelFlagEntity extends IdUserDateEntity {
     public void setDelFlag(String delFlag) {
         this.delFlag = delFlag;
     }
-
-    public static String getFieldDelFlag() {
-        return "delFlag";
-    }
-
 }

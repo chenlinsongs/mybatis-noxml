@@ -1,11 +1,9 @@
 package self.mybatis.noxml.entity;
 
-
 import javax.persistence.Column;
 import java.util.Date;
 
-
-public class UserDateEntity extends CommonEntity {
+public class UUIDUserDateEnityt extends UUIDEntity{
 
     @Column(name = "create_by")
     protected String createBy;    // 创建者
@@ -18,6 +16,26 @@ public class UserDateEntity extends CommonEntity {
 
     @Column(name = "update_date")
     protected Date updateDate;    // 更新日期
+
+
+    /**
+     * 插入之前执行方法，需要手动调用
+     */
+    @Override
+    public void preInsert(){
+        super.preInsert();
+        this.updateDate = new Date();
+        this.createDate = this.updateDate;
+    }
+
+    /**
+     * 更新之前执行方法，需要手动调用
+     */
+    @Override
+    public void preUpdate(){
+        super.preUpdate();
+        this.updateDate = new Date();
+    }
 
     public String getCreateBy() {
         return createBy;
@@ -65,23 +83,5 @@ public class UserDateEntity extends CommonEntity {
 
     public static String getFieldUpdateDate() {
         return "updateDate";
-    }
-
-
-    /**
-     * 插入之前执行方法
-     */
-    @Override
-    public void preInsert(){
-        this.updateDate = new Date();
-        this.createDate = this.updateDate;
-    }
-
-    /**
-     * 更新之前执行方法
-     */
-    @Override
-    public void preUpdate(){
-        this.updateDate = new Date();
     }
 }

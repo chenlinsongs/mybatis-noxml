@@ -2,14 +2,15 @@
 package self.mybatis.noxml.dao;
 
 import org.apache.ibatis.annotations.Param;
-import self.mybatis.noxml.CommonExample;
+import self.mybatis.noxml.entity.CommonEntity;
+import self.mybatis.noxml.example.CommonExample;
 
 import java.util.List;
 
 /**
- * 常用dao
+ * 公共的dao
  */
-public interface CommonDao<P,T>{
+public interface CommonDao<P,T extends CommonEntity<P>>{
 
     long countByExample(CommonExample example);
 

@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 
-//@Configuration
 @ConditionalOnProperty(prefix = "jdbc", value = "c3p0", havingValue = "true")
 @EnableConfigurationProperties(DataSourceProperties.class)
 public class DataSourceConfigure {

@@ -3,7 +3,7 @@ package self.mybatis.noxml.entity;
 import javax.persistence.Column;
 import java.util.Date;
 
-public class IdUserDateEntity<P> extends IdEntity<P> {
+public class IdUserDateEntity extends IdEntity {
     private static final long serialVersionUID = 1L;
 
     @Column(name = "create_by")
@@ -22,7 +22,7 @@ public class IdUserDateEntity<P> extends IdEntity<P> {
         super();
     }
 
-    public IdUserDateEntity(P id) {
+    public IdUserDateEntity(Long id) {
         super(id);
         this.id = id;
     }

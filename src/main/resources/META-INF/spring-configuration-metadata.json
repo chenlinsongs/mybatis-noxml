@@ -1,0 +1,28 @@
+{
+  "hints": [
+    {
+      "sourceType": "self.mybatis.noxml.config.MybatisProperties",
+      "name": "mybatis.basePackage",
+      "description": "mybatis search location.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "self.mybatis.noxml.config.MybatisProperties",
+      "name": "mybatis.commonMapperXmlPath",
+      "description": "the path of common mapper.xml",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "self.mybatis.noxml.config.MybatisProperties",
+      "name": "mybatis.commonMapperXmlPath",
+      "description": "the path of application  mapper.xml",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "self.mybatis.noxml.config.MybatisProperties",
+      "name": "mybatis.configFilePath",
+      "description": "the path of mybatis config.xml",
+      "type": "java.lang.String"
+    }
+  ]
+}

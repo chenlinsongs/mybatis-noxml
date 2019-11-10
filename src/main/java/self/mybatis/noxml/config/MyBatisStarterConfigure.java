@@ -11,7 +11,7 @@ import self.mybatis.noxml.utils.PropertiesUtil;
  * MyBatis扫描接口
  */
 @Configuration
-@AutoConfigureAfter(MybatisSqlSessionFactoryConfigure.class)//TODO 注意，由于MapperScannerConfigurer执行的比较早，所以必须有下面的注解
+@AutoConfigureAfter(MybatisSqlSessionFactoryConfigure.class)
 public class MyBatisStarterConfigure {
 
 

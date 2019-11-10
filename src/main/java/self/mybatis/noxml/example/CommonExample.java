@@ -1,4 +1,4 @@
-package self.mybatis.noxml;
+package self.mybatis.noxml.example;
 
 
 import org.apache.commons.lang3.reflect.FieldUtils;
@@ -196,6 +196,9 @@ public class CommonExample<T> implements Pageable<T> {
             return (Criteria) this;
         }
 
+        /**
+         * value = "%"+condition+"%"
+         * */
         public Criteria andLike(String property, String value) {
             String name = getColumnName(property);
             addCriterion(name + " like", value, property);

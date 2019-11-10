@@ -1,10 +1,10 @@
-package self.mybatis.noxml.config;
+package self.mybatis.noxml;
 
-
-import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.builder.BuilderException;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.reflections.Reflections;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -33,6 +33,8 @@ import java.util.Set;
 
 
 public class DynamicMapperSqlSessionBean extends SqlSessionFactoryBean {
+
+    Logger logger = LoggerFactory.getLogger(DynamicMapperSqlSessionBean.class);
 
     private String searchLocation;
 
@@ -70,13 +72,14 @@ public class DynamicMapperSqlSessionBean extends SqlSessionFactoryBean {
         List<Resource> resources = new ArrayList<>();
         if (annotated !=null && annotated.size() > 0){
             Iterator iterator = annotated.iterator();
-            System.out.println("dao total:"+annotated.size());
+            if (logger.isInfoEnabled())
+                logger.info("Dao total:"+annotated.size());
             int i = 0;
             while (iterator.hasNext()){
                 Class clazz = (Class) iterator.next();
-//                MyBatisDao annotation = (MyBatisDao) clazz.getAnnotation(MyBatisDao.class);
                 if (CommonDao.class.isAssignableFrom(clazz)){
-                    System.out.println("init dao:"+clazz.getName()+" "+i++);
+                    if (logger.isInfoEnabled())
+                        logger.info("init dao:"+clazz.getName()+" "+(i++));
                     Resource resource = getMapper4Class(clazz);
                     resources.add(resource);
                 }

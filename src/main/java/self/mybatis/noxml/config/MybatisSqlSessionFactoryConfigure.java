@@ -6,14 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import self.mybatis.noxml.DynamicMapperSqlSessionBean;
 import self.mybatis.noxml.entity.Entity;
 
 import javax.sql.DataSource;
 
-//@Configuration
 @ConditionalOnProperty(prefix = "mybatis", value = "basePackage")
 @EnableConfigurationProperties(MybatisProperties.class)
 public class MybatisSqlSessionFactoryConfigure {
@@ -36,7 +35,7 @@ public class MybatisSqlSessionFactoryConfigure {
         factoryBean.setDataSource(dataSource);
         factoryBean.setTypeAliasesPackage(mybatisProperties.getBasePackage());
         factoryBean.setTypeAliasesSuperType(Entity.class);
-        //添加XML目录
+        //添加自定义的mapper.xml目录
         ResourcePatternResolver configResolver = new PathMatchingResourcePatternResolver();
         ResourcePatternResolver mapperResolver = new PathMatchingResourcePatternResolver();
         try {

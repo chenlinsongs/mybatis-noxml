@@ -3,7 +3,7 @@ package self.mybatis.noxml.entity;
 
 import javax.persistence.Column;
 
-public class IdUserDateDelFlagRemarksNameEntity<P> extends IdUserDateDelFlagRemarksEntity<P>{
+public class IdUserDateDelFlagRemarksNameEntity extends IdUserDateDelFlagRemarksEntity{
     private static final long serialVersionUID = 1L;
 
     @Column(name = "name")
@@ -13,7 +13,7 @@ public class IdUserDateDelFlagRemarksNameEntity<P> extends IdUserDateDelFlagRema
         super();
     }
 
-    public IdUserDateDelFlagRemarksNameEntity(P id){
+    public IdUserDateDelFlagRemarksNameEntity(Long id){
         super(id);
     }
 

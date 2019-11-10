@@ -8,10 +8,7 @@ jdbc:
   c3p0: true
 
 mybatis:
-  basePackage: self.mybatis.noxml
-
-server:
-  port: 8080
+  basePackage: self.mybatis
 
 logging:
   path: logs

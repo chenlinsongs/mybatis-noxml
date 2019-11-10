@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "mybatis")
 public class MybatisProperties {
 
-    private String basePackage = "*";
+    private String basePackage;
 
     private String commonMapperXmlPath = "/mappings/common/Common.xml";
 

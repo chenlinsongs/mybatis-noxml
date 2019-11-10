@@ -9,6 +9,7 @@ import self.mybatis.noxml.config.*;
 @EnableConfigurationProperties({MybatisProperties.class, DataSourceProperties.class})
 @Import({MybatisSqlSessionFactoryConfigure.class,
         MyBatisStarterConfigure.class,
-        DataSourceConfigure.class})
+        DataSourceConfigure.class,
+        TransactionConfigure.class})
 public class MybatisNoXmlAutoConfigure {
 }
