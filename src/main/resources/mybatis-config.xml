@@ -50,6 +50,8 @@
 	<!-- 插件配置 -->
 	<plugins>
 		<plugin interceptor="self.mybatis.noxml.interceptor.PaginationInterceptor" />
+		<plugin interceptor="self.mybatis.noxml.interceptor.MyBatisParameterInterceptor" />
+		<plugin interceptor="self.mybatis.noxml.interceptor.MyBatisSqlInjectionInterceptor" />
     </plugins>
 
 	

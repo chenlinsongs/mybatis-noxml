@@ -6,4 +6,42 @@
         SELECT * from mybatis_test
     </select>
 
+    <select id="getByIdInt" resultType="self.mybatis.noxml.test.MybatisTest">
+        SELECT * from mybatis_test where name = '${id}'
+    </select>
+
+    <select id="getById" resultType="self.mybatis.noxml.test.MybatisTest">
+        SELECT * from mybatis_test where name = '${id}'
+    </select>
+
+    <select id="getByName" resultType="self.mybatis.noxml.test.MybatisTest">
+        SELECT * from mybatis_test where name = "${name}"
+    </select>
+
+    <select id="getByNamePrepare" resultType="self.mybatis.noxml.test.MybatisTest">
+        SELECT * from mybatis_test where name = #{name}
+    </select>
+
+    <select id="testMap" resultType="self.mybatis.noxml.test.MybatisTest">
+        SELECT * from mybatis_test where name = '${name}'
+    </select>
+
+    <select id="testModel" resultType="self.mybatis.noxml.test.MybatisTest">
+        SELECT * from mybatis_test where name = "${name}"
+    </select>
+
+    <select id="testCollection" resultType="self.mybatis.noxml.test.MybatisTest">
+        SELECT * from mybatis_test where name in
+        <choose>
+            <when test="idList!=null and idList.size()> 0">
+                <foreach close=")" collection="idList" item="listItem" open="(" separator=",">
+                    '${listItem}'
+                </foreach>
+            </when>
+            <otherwise>
+                ('')
+            </otherwise>
+        </choose>
+    </select>
+
 </mapper>
